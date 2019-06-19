@@ -44,21 +44,48 @@ class SignedIn extends Component {
 }
    ];
 
+
+   makerequest=()=>{
+
+   var request = require("request");
+
+   var options = { method: 'GET',
+     url: 'https://test-es.edamam.com/search',
+     qs: 
+      { q: 'cheese',
+        app_id: '4c88eeb8',
+        app_key: '89bdea29e5ed9d7297eb846407522d44' },
+     headers: 
+      { 'cache-control': 'no-cache',
+      'Access-Control-Allow-Origin':"*",
+        Connection: 'keep-alive',
+        'accept-encoding': 'gzip, deflate',
+        cookie: 'JSESSIONID=7AFC1DF1C7D451C0A5F8334D01FD5624',
+        Host: 'test-es.edamam.com',
+        'Postman-Token': '9b355ae7-12a7-4639-8eee-df145d6dacbf,1856b83b-1a95-4200-af49-86ef29a1fa55',
+        'Cache-Control': 'no-cache',
+        Accept: '*/*',
+        'User-Agent': 'PostmanRuntime/7.15.0' } };
+   
+   request(options, function (error, response, body) {
+     if (error) throw new Error(error);
+   
+     console.log(body);
+   });
+
+
+  }
+
+
   fetchrequest=()=>{
     fetch(this.BASE_URL, {
       method: 'GET', // *GET, POST, PUT, DELETE, etc.
       mode: 'no-cors', // no-cors, cors, *same-origin
       cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
      
-      headers: {
-          'Content-Type': 'application/json',    
-          'accept-encoding': 'gzip, deflate',    
-         
-      },
-      
-   
-      q: 'toast',
-      format: 'json'}) // body data type must match "Content-Type" header
+       
+ 
+    }) // body data type must match "Content-Type" header
   
   .then(response => {
     console.log(response);
@@ -83,6 +110,7 @@ class SignedIn extends Component {
         <NavBar username={this.username} signOut ={this.signOut}></NavBar>
           <div className="SignedIn">
           <button onClick={this.fetchrequest}>Click Me</button>
+          <button onClick={this.makerequest}>Make Request Me</button>
           </div>
         
          
