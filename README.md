@@ -1,4 +1,29 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Animal Kingdom Sample app
+
+This sample app allows a user to create their own animal kingdom. They create their own
+animal persona and then populate their kingdom with rulers or subjects of other kingdoms
+either on the same app or on other forks of this app.
+
+To add an animal to your kingdom, you can enter the animal's URL into the box.
+
+Each app can have different animals and territories. Animals and territories that only exist
+in one instance of this app (a "planet") can be used in other instances.
+
+You can browse kingdoms on other instances and forks of this apps from the other kingdom section.
+
+## How this works
+
+Information about each animal and the subjects in a kingdom is loaded from
+the creating user's Gaia storage. Images of the animal persona and territories
+are loaded from the instance of the app where the were created.
+
+
+## Developer customization
+
+Developers can fork this app and add their own custom animal and territory types to
+their fork. They can also add their custom instance of this app to the list of "Other Kingdoms"
+in the app by sending a pull request to the repo.
+
 
 ## Available Scripts
 
@@ -15,7 +40,6 @@ You will also see any lint errors in the console.
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
@@ -25,44 +49,18 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
 ### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+If you are deploying this, you'll need to set cores headers to allow requests from all
+hosts otherwise you won't be able to sign in and other apps won't be able to load
+your animal and kingdom information.
 
-### `npm run build` fails to minify
+This code includes deployment settings for Firebase and Netlify in the `cors` directory:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+| Service  	| Files                      	|
+|----------	|----------------------------	|
+| Firebase 	| firebase.json, .firebaserc 	|
+| Netlify  	| _headers, _redirects       	|
+
+If you're deploying this on another service, you'll need to set CORS headers appropriately for that service.
