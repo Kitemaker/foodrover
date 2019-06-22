@@ -109,8 +109,9 @@ class SignedIn extends Component {
       <div>
         <NavBar username={this.username} signOut ={this.signOut}></NavBar>
           <div className="SignedIn">
-          <button onClick={this.fetchrequest}>Click Me</button>
-          <button onClick={this.makerequest}>Make Request Me</button>
+          {/* <button onClick={this.fetchrequest}>Click Me</button>
+          <button onClick={this.makerequest}>Make Request Me</button> */}
+          <div id="my_container" className="fatsecret_container"></div>
           </div>
         
          
